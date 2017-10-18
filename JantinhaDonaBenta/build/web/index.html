@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <title>Jantinha</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link rel="stylesheet" href="materialize/css/materialize.min.css" type="text/css"/>
+    </head>
+    <body>
+        <ul class="tabs light-blue accent-4">
+            <li class="tab col s3"><a href="#preco" class="white-text">Preço</a></li>
+            <li class="tab col s3"><a href="#prato" class="white-text">Prato</a></li>
+            <li class="tab col s3"><a href="#cardapio" class="white-text">Cardapio</a></li>
+        </ul>
+
+        <div class="row">
+            <div class="col s12">
+                <form action="Jantinha.jsp" class="col s12 row">
+                    <div id="preco" class="col s12">
+                        <div class="row col s12">
+                            <div class="card-panel z-depth-2">
+                                <h4 class="blue-text">Valor das porções:</h4>
+                                <div class="collection">
+                                    <div class="input-field col s4">
+                                        <input type="text" onkeypress="mascara(this, valor);" value="1.00" min="4" max="5" name="arroz" id="arroz" class="validate" required="required" pattern="([0-9]{1,3}\.)?[0-9]{1,3}.[0-9]{2}$">
+                                        <label for="arroz" data-error="Exemplo:(0.50)">Arroz</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="text" onkeypress="mascara(this, valor);" value="3.00" min="4" max="5" name="carne" id="carne" class="validate" required="required" pattern="([0-9]{1,3}\.)?[0-9]{1,3}.[0-9]{2}$">
+                                        <label for="carne" data-error="Exemplo:(0.50)">Carne</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="text" onkeypress="mascara(this, valor);" value="2.00" min="4" max="5" name="salada" id="salada" class="validate" required="required" pattern="([0-9]{1,3}\.)?[0-9]{1,3}.[0-9]{2}$">
+                                        <label for="salada" data-error="Exemplo:(0.50)">Salada</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div id="prato" class="col s12">
+                        <div class="row col s12">
+                            <div class="card-panel z-depth-2">
+                                <h4 class="blue-text">Quantidade das porções:</h4>
+                                <blockquote>Prato 1:</blockquote>
+                                <div class="collection">
+                                    <div class="input-field col s4">
+                                        <input type="number" value="2" name="p1arroz" id="p1arroz" class="validate" required="required">
+                                        <label for="p1arroz">Arroz</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="number" value="1" name="p1carne" id="p1carne" class="validate" required="required">
+                                        <label for="p1carne">Carne</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="number" value="1" name="p1salada" id="p1salada" class="validate" required="required">
+                                        <label for="p1salada">Salada</label>
+                                    </div>
+                                </div>
+                                <blockquote>Prato 2:</blockquote>
+                                <div class="collection">
+                                    <div class="input-field col s4">
+                                        <input type="number" value="1" name="p2arroz" id="p2arroz" class="validate" required="required">
+                                        <label for="p2arroz">Arroz</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="number" value="2" name="p2carne" id="p2carne" class="validate" required="required">
+                                        <label for="p2carne">Carne</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="number" value="1" name="p2salada" id="p2salada" class="validate" required="required">
+                                        <label for="p2salada">Salada</label>
+                                    </div>
+                                </div>
+                                <blockquote>Prato 3:</blockquote>
+                                <div class="collection">
+                                    <div class="input-field col s4">
+                                        <input type="number" value="2" name="p3arroz" id="p3arroz" class="validate" required="required">
+                                        <label for="p3arroz">Arroz</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="number" value="2" name="p3carne" id="p3carne" class="validate" required="required">
+                                        <label for="p3carne">Carne</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input type="number" value="0" name="p3salada" id="p3salada" class="validate" required="required">
+                                        <label for="p3salada">Salada</label>
+                                    </div>
+                                </div>
+                                <blockquote>Cardapio</blockquote>
+                                <div class="collection">
+                                    <div class="input-field row col s4">
+                                        <input type="submit" name="cadastrar" value="Cadastrar" class="btn">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="cardapio" class="col s12">
+        </div>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="materialize\js\materialize.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('ul.tabs').tabs();
+              });
+            function mascara(o, f) {
+                v_obj = o;
+                v_fun = f;
+                setTimeout("execmascara()", 1);
+            }
+            function execmascara() {
+                v_obj.value = v_fun(v_obj.value);
+            }
+            function valor(v) {
+                v = v.replace(/\D/g, "");
+                v = v.replace(/[0-9]{15}/, "invalido");
+                v = v.replace(/(\d{1})(\d{11})$/, "$1.$2"); // coloca ponto antes dos
+                // Ãºltimos 11 digitos
+                v = v.replace(/(\d{1})(\d{8})$/, "$1.$2"); // coloca ponto antes dos
+                // Ãºltimos 8 digitos
+                v = v.replace(/(\d{1})(\d{5})$/, "$1.$2"); // coloca ponto antes dos
+                // Ãºltimos 5 digitos
+                v = v.replace(/(\d{1})(\d{1,2})$/, "$1.$2"); // coloca virgula antes dos
+                // Ãºltimos 2 digitos
+                return v;
+            }
+        </script>
+    </body>
+</html>
