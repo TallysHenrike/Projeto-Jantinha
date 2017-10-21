@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col s12">
-                <form action="Jantinha.jsp" class="col s12 row">
+                <form action="Jantinha.jsp" class="col s12 row" method="get">
                     <div id="preco" class="col s12">
                         <div class="row col s12">
                             <div class="card-panel z-depth-2">
@@ -144,9 +144,6 @@
                 double valorCarneP3 = vlCarne * porCarneP3;
                 double valorSaladaP3 = vlSalada * porSaladaP3;
                 
-                if () {
-                    
-                }
                 double prato1 = valorArrozP1 + valorCarneP1 + valorSaladaP1;
                 double prato2 = valorArrozP2 + valorCarneP2 + valorSaladaP2;
                 double prato3 = valorArrozP3 + valorCarneP3 + valorSaladaP3;                    
