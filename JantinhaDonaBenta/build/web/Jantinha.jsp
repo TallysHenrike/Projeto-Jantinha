@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<!--Let browser know website is optimized for mobile-->
+        <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta charset="UTF-8">
         <title>Jantinha</title>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
-        <link rel="stylesheet" href="materialize\css\materialize.css" type="text/css">
+        <link rel="stylesheet" href="materialize/css/materialize.min.css" type="text/css"/>
     </head>
     <body>
         <ul class="tabs light-blue accent-4">
@@ -144,6 +144,9 @@
                 double valorCarneP3 = vlCarne * porCarneP3;
                 double valorSaladaP3 = vlSalada * porSaladaP3;
                 
+                if () {
+                    
+                }
                 double prato1 = valorArrozP1 + valorCarneP1 + valorSaladaP1;
                 double prato2 = valorArrozP2 + valorCarneP2 + valorSaladaP2;
                 double prato3 = valorArrozP3 + valorCarneP3 + valorSaladaP3;                    
