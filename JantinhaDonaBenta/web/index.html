@@ -11,15 +11,29 @@
         <link rel="stylesheet" href="materialize/css/materialize.min.css" type="text/css"/>
     </head>
     <body>
-        <ul class="tabs light-blue accent-4">
-            <li class="tab col s3"><a href="#preco" class="white-text">Preço</a></li>
-            <li class="tab col s3"><a href="#prato" class="white-text">Prato</a></li>
-            <li class="tab col s3"><a href="#cardapio" class="white-text">Cardapio</a></li>
-        </ul>
-
+        <nav class="nav-extended light-blue accent-4">
+            <div class="container nav-wrapper">
+                <a href="#" class="brand-logo">Dona Benta</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">Login</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+            <div class="container nav-content">
+                <ul class="tabs tabs-transparent">
+                    <li class="tab"><a href="#preco" class="white-text">Preço</a></li>
+                    <li class="tab"><a href="#prato" class="white-text">Prato</a></li>
+                    <li class="tab"><a href="#cardapio" class="active white-text">Cardapio</a></li>
+                    <li class="tab"><a href="#pedido" class="white-text">Pedido</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="row">
             <div class="col s12">
-                <form action="Jantinha.jsp" class="col s12 row" method="get">
+                <form action="Jantinha.jsp" class="col s12 row" method="post">
                     <div id="preco" class="col s12">
                         <div class="row col s12">
                             <div class="card-panel z-depth-2">
@@ -99,6 +113,7 @@
                             </div>
                         </div>
                     </div>
+                    <div id="pedido" class="col s12"></div>
                 </form>
             </div>
         </div>
@@ -307,6 +322,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $('ul.tabs').tabs();
+                $(".button-collapse").sideNav();
             });
             function mascara(o, f) {
                 v_obj = o;
